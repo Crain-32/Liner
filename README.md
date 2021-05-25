@@ -100,3 +100,4 @@ of any namespace.
 * `add` add two numeric properties
 * `sub` subtracts two numeric properties
 * `split` allows for two function calls on one line.
+* `in` lets the user input a number from the console

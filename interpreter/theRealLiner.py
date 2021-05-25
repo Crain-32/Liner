@@ -36,14 +36,23 @@ class Liner:
     def ifStatement(self, numericOne, numericTwo):
         return numericOne if (numericOne > numericTwo) else numericTwo
 
-    def setNamespace(self, **args):
-        pass
+    def setNamespace(self, namespace, numeric):
+        if not numeric.isdigit():
+            numeric = self.evalLine(numeric)
+        self.namespaces.update({namespace : numeric})
+        self.reverseLookup.update({numeric : namespace})
 
     def runFunction(self, numeric):
-        return self.runLine(self.reverseLookup[numeric])
+        if not numeric.isdigit():
+            numeric = self.evalLine(numeric)
+        return self.runLine(self.functionLookup[self.reverseLookup[numeric]])
 
-    def splitOperation(self, functionOne, functionTwo):
-        pass
+    def splitOperation(self, namespaceOne, namespaceTwo):
+        self.runLine(self.functionLookup[namespaceOne[:-2]])
+        self.runLine(self.functionLookup[namespaceTwo[:-2]])
+
+    def inStatement(self):
+        return int(input("Number: "))
 
     def evalLine(self, line):
         if line.endswith("()"):
@@ -52,13 +61,12 @@ class Liner:
         elif len(line) == 0:
             exit(0)
         else:
-            return self.namespaces(line.strip())
+            return self.namespaces[line.strip()]
 
     def start(self):
         self.runLine(self.entranceLine)
 
     def runLine(self, line):
-
         if 'prin' in line:
             self.prin(line.split("prin ")[1])
 
@@ -71,7 +79,7 @@ class Liner:
 
         elif 'set' in line:
             args = line.split("set ")[1].split(" ")
-            self.setNamespace(args)
+            self.setNamespace(args[0], args[1])
 
         elif 'run' in line:
             return self.runFunction(line.split("run ")[1])
@@ -89,8 +97,11 @@ class Liner:
             return first - second
 
         elif 'split' in line:
-            args = line.split(" split ")[1]
+            args = line.split(" split ")
             return self.splitOperation(args[0], args[1])
+
+        elif line.strip() == 'in':
+            return self.inStatement()
 
         else:
             return self.evalLine(line)

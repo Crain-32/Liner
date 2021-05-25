@@ -1,0 +1,49 @@
+
+B; in
+D; set B B()
+E; B add H
+F; run E()
+G; D() split F()
+G()
+
+
+H; prin o()
+I; J() split I()
+J; prin l()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C Zero is 48, 1 is 49
+o; let o
+l; let l
