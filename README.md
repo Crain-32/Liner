@@ -90,12 +90,12 @@ calls another function, that is assumed to be the return value, which is importa
 for the `prin` keyword.
 
 ### Keywords
-*`prin` Prints the results of all the following function, and the numeric value
+-`prin` Prints the results of all the following function, and the numeric value
 of any namespace.
-*`let` converts an integer into its Unicode character.
-*`if` returns the highest number of two different namespaces/function
-*`set` override the numeric value of a namespace, and replaces the original in duplicate cases.
-*`run` Run the function at the given numeric property, if no function is there, crashes.
-*`add` add two numeric properties
-*`sub` subtracts two numeric properties
-*`split` allows for two function calls on one line.
+-`let` converts an integer into its Unicode character.
+-`if` returns the highest number of two different namespaces/function
+-`set` override the numeric value of a namespace, and replaces the original in duplicate cases.
+-`run` Run the function at the given numeric property, if no function is there, crashes.
+-`add` add two numeric properties
+-`sub` subtracts two numeric properties
+-`split` allows for two function calls on one line.
