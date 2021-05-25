@@ -60,9 +60,9 @@ could write the following.
 C; assume this is line 1 of the file
 A;
 B;
-C; A add B
-D; prin C()
-D()
+D; A add B
+E; prin D()
+E()
 ```
 As number line can't go negative, to get a negative number, you'd have to subtract
 two numbers. The following would print a negative one.
@@ -70,9 +70,9 @@ two numbers. The following would print a negative one.
 C; assume this is line 1 of the file
 A;
 B;
-C; A sub B
-D; prin C()
-D()
+D; A sub B
+E; prin D()
+E()
 ```
 
 ### Functions and Variables
