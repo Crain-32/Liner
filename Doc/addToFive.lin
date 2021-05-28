@@ -1,0 +1,6 @@
+
+A;
+B;
+D; A add B
+E; prin D()
+E()
