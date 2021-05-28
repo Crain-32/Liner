@@ -1,0 +1,26 @@
+B;
+A;
+
+
+
+
+
+
+
+
+
+
+D; prin A
+E; D() split F()
+F; G() split K()
+G; set A H()
+H; A add B
+I; set B J()
+J; A sub B
+K; I() split E()
+
+L; prin B
+M; prin B
+N; L() split M()
+O; N() split E()
+O()
